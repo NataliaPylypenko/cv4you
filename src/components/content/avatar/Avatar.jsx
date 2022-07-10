@@ -22,8 +22,40 @@ const Wrapper = styled.div`
   }
 `
 
-const Avatar = ({ isSquare, onClick }) => {
-    return  <Wrapper isSquare={isSquare} onClick={onClick}/>
+const Avatar = ({ isSquare }) => {
+    const [selectedFile, setSelectedFile] = React.useState(null)
+    const [preview, setPreview] = React.useState(null)
+
+    React.useEffect( () => {
+        const objectUrl = selectedFile && URL.createObjectURL(selectedFile)
+        setPreview(objectUrl)
+
+        return () => URL.revokeObjectURL(objectUrl)
+    }, [selectedFile])
+
+    return (
+        <Wrapper isSquare={isSquare} >
+            <input
+                id='Avatar'
+                type='file'
+                value=''
+                onChange={ (e) => setSelectedFile (e.target.files[0]) }
+            />
+
+            <label htmlFor='Avatar'>
+                {preview ? (
+                    <div
+                        style={{
+                            backgroundImage: `url(${preview})`,
+                            backgroundSize: 'cover',
+                        }}
+                    />
+                ) : (
+                    'LOL'
+                )}
+            </label>
+        </Wrapper>
+    )
 }
 
 Avatar.propTypes = {
