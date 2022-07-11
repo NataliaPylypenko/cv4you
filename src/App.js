@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Header, Footer, Avatar, Title, Description } from "./components";
+import { Header, Footer, Avatar, Title, Description, Range } from "./components";
 
 const Wrapper = styled.div`
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 3rem 2rem;
   background-color: white;
   border: 1px solid #ececec;
@@ -88,7 +88,9 @@ const App = () => {
                                   </Title>
 
                                   <Description>
-                                      Skill
+                                      <Range />
+                                      <Range />
+                                      <Range />
                                   </Description>
                               </Content>
                           </Row>
