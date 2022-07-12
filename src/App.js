@@ -32,8 +32,13 @@ const Content = styled.div`
 
 
 const App = () => {
+
+  const [skillsCounter, setSkillsCounter] = React.useState(1)
+  const [worksCounter, setWorksCounter] = React.useState(1)
+
   const handleAvatarClick = () => console.log('avatar')
   const handlePrintClick = () => console.log('print')
+
   return (
       <div className="ui-wrapper">
           <Header onClick={handlePrintClick} />
@@ -82,15 +87,17 @@ const App = () => {
                                   <Title
                                       size='3'
                                       isUppercase
+                                      isShowButton
+                                      onClick={() => setSkillsCounter(skillsCounter + 1)}
                                       style={{ marginTop: '3.6rem' }}
                                   >
                                       Professional Skills
                                   </Title>
 
                                   <Description>
-                                      <Range />
-                                      <Range />
-                                      <Range />
+                                      {new Array(skillsCounter).fill(1).map((_, i) => (
+                                          <Range key={i} />
+                                      ))}
                                   </Description>
                               </Content>
                           </Row>
@@ -100,14 +107,19 @@ const App = () => {
                                   <Title
                                       size='3'
                                       isUppercase
+                                      isShowButton
+                                      onClick={() => setWorksCounter(worksCounter + 1)}
                                       style={{ marginTop: '3.6rem' }}
                                   >
                                       Work experience
                                   </Title>
 
-                                  <Description>
-                                      Description (Try to list your achievements rather than just job responsibilities)
-                                  </Description>
+                                  {new Array(worksCounter).fill(1).map((_, i) => (
+                                      <Description key={i}>
+                                          {i+1}. Try to list your achievements rather than just job responsibilities)
+                                      </Description>
+                                  ))}
+
                               </Content>
                           </Row>
 

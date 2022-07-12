@@ -34,7 +34,7 @@ const Range = () => {
 
     return (
         <Wrapper>
-            <Description>Name - {value}</Description>
+            <Description>Skill - {value}</Description>
 
             <Input
                 type='range'
