@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useReactToPrint } from 'react-to-print'
 
 import { Header, Footer, Avatar, Title, Description, Range } from "./components";
 
@@ -36,8 +37,10 @@ const App = () => {
   const [skillsCounter, setSkillsCounter] = React.useState(1)
   const [worksCounter, setWorksCounter] = React.useState(1)
 
-  const handleAvatarClick = () => console.log('avatar')
-  const handlePrintClick = () => console.log('print')
+  const componentRef = React.useRef()
+  const handlePrintClick = useReactToPrint({
+      content: () => componentRef.current,
+  })
 
   return (
       <div className="ui-wrapper">
@@ -46,7 +49,7 @@ const App = () => {
           <div className="ui-content-wrapper">
               <section className="ui-section">
                   <Wrapper>
-                      <div className="ui-container">
+                      <div className="ui-container" ref={componentRef}>
 
                           <Row itemsCenter>
                               <Content>
@@ -62,7 +65,7 @@ const App = () => {
                               </Content>
 
                               <Sidebar>
-                                  <Avatar onClick={handleAvatarClick} />
+                                  <Avatar />
                               </Sidebar>
                           </Row>
 

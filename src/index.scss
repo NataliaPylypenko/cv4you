@@ -24,3 +24,23 @@
 .isUppercase {
   text-transform: uppercase;
 }
+
+@media print {
+  body,
+  html {
+    margin: 0;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  p {
+    padding: 0 0.4rem;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 20mm;
+}
