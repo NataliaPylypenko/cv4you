@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import propTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
 
 const Wrapper = styled.div`
   width: 10rem;
@@ -51,7 +53,7 @@ const Avatar = ({ isSquare }) => {
                         }}
                     />
                 ) : (
-                    'LOL'
+                    <FontAwesomeIcon icon={faCamera} size="6x"/>
                 )}
             </label>
         </Wrapper>

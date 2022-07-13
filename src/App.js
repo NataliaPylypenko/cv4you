@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useReactToPrint } from 'react-to-print'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Header, Footer, Avatar, Title, Description, Range } from "./components";
 
@@ -57,11 +58,42 @@ const App = () => {
                                   <Description>Desired role</Description>
 
                                   <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fa', 'phone']} />
                                       Contact details
                                   </Description>
                                   <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fa', 'location-dot']} />
                                       Contact details
                                   </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                                      Contact details
+                                  </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+                                      Contact details
+                                  </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fab', 'github']} />
+                                      Contact details
+                                  </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fab', 'instagram']} />
+                                      Contact details
+                                  </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fab', 'telegram']} />
+                                      Contact details
+                                  </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fa', 'envelope']} />
+                                      Contact details
+                                  </Description>
+                                  <Description isPrimary>
+                                      <FontAwesomeIcon icon={['fa', 'link']} />
+                                      Contact details
+                                  </Description>
+
                               </Content>
 
                               <Sidebar>
