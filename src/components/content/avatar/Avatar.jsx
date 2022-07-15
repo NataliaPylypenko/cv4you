@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
+import classNames from "classnames";
 
 const Wrapper = styled.div`
   width: 10rem;
   height: 10rem;
   border-radius: ${(props) => (props.isSquare ? '10px' : '50%')};
-  background-color: #bfbfbf;
+  background-color: #ccc;
   input {
     display: none;
   }
@@ -19,12 +20,14 @@ const Wrapper = styled.div`
     justify-content: center;
     width: 10rem;
     height: 10rem;
+    color: #1f497d;
     cursor: pointer;
     border-radius: ${(props) => (props.isSquare ? '10px' : '50%')};
   }
 `
 
 const Avatar = ({ isSquare }) => {
+
     const [selectedFile, setSelectedFile] = React.useState(null)
     const [preview, setPreview] = React.useState(null)
 
@@ -53,7 +56,7 @@ const Avatar = ({ isSquare }) => {
                         }}
                     />
                 ) : (
-                    <FontAwesomeIcon icon={faCamera} size="6x"/>
+                    <FontAwesomeIcon icon={faCamera} size="6x" className="cv-section__contacts-icon" />
                 )}
             </label>
         </Wrapper>

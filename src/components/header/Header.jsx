@@ -2,6 +2,7 @@ import React from 'react'
 
 import './Header.scss'
 import propTypes from "prop-types";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Header = ({ onClick }) => {
     return (
@@ -10,6 +11,7 @@ const Header = ({ onClick }) => {
                 <div className='Header_content'>
                     <span className='Header_logo'>Cv4you</span>
                     <button className='ui-button isLink' onClick={onClick}>
+                        <FontAwesomeIcon icon={['fa', 'print']} />
                         Print
                     </button>
                 </div>

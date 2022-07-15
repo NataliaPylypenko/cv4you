@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import './App.scss'
+
 import { useReactToPrint } from 'react-to-print'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faPhone, faLocationDot, faEnvelope, faLink, faPrint } from '@fortawesome/free-solid-svg-icons'
 import { Header, Footer, Avatar, Title, Description, Range } from "./components";
 
 const Wrapper = styled.div`
@@ -11,27 +15,22 @@ const Wrapper = styled.div`
   padding: 3rem 2rem;
   background-color: white;
   border: 1px solid #ececec;
-  box-shadow: 5px 7px 10px 4px #ececec;
-  border-radius: 14px;
+  box-shadow: 0px 4px 10px rgba(0, 117, 255, 0.07), 0px 4px 20px rgba(0, 117, 255, 0.1);
+  border-radius: 1%;
 `
-
+const Container = styled.div`
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+`
 const Row = styled.section`
   display: flex;
   flex-wrap: wrap;
-  align-items: ${(props) => (props.itemsCenter ? 'center' : 'start')};
-  margin: 2rem 0;
+  margin-right: -15px;
+  margin-left: -15px;
 `
-
-const Sidebar = styled.div`
-  flex: 1;
-  margin-right: 1rem;
-`
-
-const Content = styled.div`
-  flex: 3;
-  margin-left: 1rem;
-`
-
 
 const App = () => {
 
@@ -43,70 +42,94 @@ const App = () => {
       content: () => componentRef.current,
   })
 
+  library.add(fab, faPhone, faLocationDot, faEnvelope, faLink, faPrint)
+
   return (
-      <div className="ui-wrapper">
+      <div className="cv-wrapper">
           <Header onClick={handlePrintClick} />
+          <Wrapper>
+              <div ref={componentRef}>
 
-          <div className="ui-content-wrapper">
-              <section className="ui-section">
-                  <Wrapper>
-                      <div className="ui-container" ref={componentRef}>
-
-                          <Row itemsCenter>
-                              <Content>
-                                  <Title size='3'>Your name</Title>
-                                  <Description>Desired role</Description>
-
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fa', 'phone']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fa', 'location-dot']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fab', 'github']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fab', 'instagram']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fab', 'telegram']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fa', 'envelope']} />
-                                      Contact details
-                                  </Description>
-                                  <Description isPrimary>
-                                      <FontAwesomeIcon icon={['fa', 'link']} />
-                                      Contact details
-                                  </Description>
-
-                              </Content>
-
-                              <Sidebar>
-                                  <Avatar />
-                              </Sidebar>
-                          </Row>
-
+                  <section className="cv-section">
+                      <Container>
                           <Row>
-                              <Content>
+                              <div className="cv-section__head">
+                                  <div className="cv-section__header">
+                                      <Description className="cv-title-3">Your name</Description>
+
+                                      <Description className="cv-subtitle">Desired role</Description>
+
+                                      <div className="cv-section__contacts">
+                                          <div className="cv-section__contacts-item">
+                                              <Description>
+                                                  <FontAwesomeIcon icon={['fa', 'phone']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description>
+                                                  <FontAwesomeIcon icon={['fa', 'location-dot']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description>
+                                                  <FontAwesomeIcon icon={['fab', 'facebook-f']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description>
+                                                  <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description isPrimary>
+                                                  <FontAwesomeIcon icon={['fab', 'github']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description isPrimary>
+                                                  <FontAwesomeIcon icon={['fab', 'instagram']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description isPrimary>
+                                                  <FontAwesomeIcon icon={['fab', 'telegram']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description isPrimary>
+                                                  <FontAwesomeIcon icon={['fa', 'envelope']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                          <div className="cv-section__contacts-item">
+                                              <Description isPrimary>
+                                                  <FontAwesomeIcon icon={['fa', 'link']} className="contacts-icon" />
+                                                  Contact details
+                                              </Description>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div className="cv-section__cropper">
+                                      <Avatar />
+                                  </div>
+                              </div>
+                          </Row>
+                      </Container>
+                  </section>
+
+                  <section className="cv-section">
+                      <Container>
+                          <Row>
                                   <Title
-                                      size='3'
+                                      size='2'
                                       isUppercase
-                                      style={{ marginTop: '3.6rem' }}
                                   >
                                       Summary
                                   </Title>
@@ -114,17 +137,20 @@ const App = () => {
                                   <Description>
                                       3 meaningful sentences, an overview of your career. State your strengths and professional focus.
                                   </Description>
-                              </Content>
-                          </Row>
 
+                          </Row>
+                      </Container>
+                  </section>
+
+                  <section className="cv-section">
+                      <Container>
                           <Row>
-                              <Content>
+
                                   <Title
-                                      size='3'
+                                      size='2'
                                       isUppercase
                                       isShowButton
                                       onClick={() => setSkillsCounter(skillsCounter + 1)}
-                                      style={{ marginTop: '3.6rem' }}
                                   >
                                       Professional Skills
                                   </Title>
@@ -134,17 +160,19 @@ const App = () => {
                                           <Range key={i} />
                                       ))}
                                   </Description>
-                              </Content>
                           </Row>
+                      </Container>
+                  </section>
 
+                  <section className="cv-section">
+                      <Container>
                           <Row>
-                              <Content>
+
                                   <Title
-                                      size='3'
+                                      size='2'
                                       isUppercase
                                       isShowButton
                                       onClick={() => setWorksCounter(worksCounter + 1)}
-                                      style={{ marginTop: '3.6rem' }}
                                   >
                                       Work experience
                                   </Title>
@@ -155,13 +183,13 @@ const App = () => {
                                       </Description>
                                   ))}
 
-                              </Content>
-                          </Row>
 
-                      </div>
-                  </Wrapper>
-              </section>
-          </div>
+                          </Row>
+                      </Container>
+                  </section>
+
+              </div>
+          </Wrapper>
 
           <Footer />
       </div>

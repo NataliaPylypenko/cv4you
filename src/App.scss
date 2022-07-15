@@ -1,0 +1,108 @@
+.cv-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+.cv-section {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px rgba(0, 117, 255, 0.07), 0px 4px 20px rgba(0, 117, 255, 0.1);
+    border: 1px solid #0080f2;
+    transition: all 0.3s ease-out;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(100% - 12rem);
+  }
+  &__cropper {
+    align-self: center;
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  &__contacts-item {
+    margin: 0 0 1rem;
+    padding-right: 2rem;
+    padding-left: 2.5rem;
+    position: relative;
+    width: 50%;
+    max-width: 98%;
+  }
+}
+
+
+.cv-title-3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  margin: 0.2rem 0;
+  padding: 0 1.5rem;
+  text-align: center;
+  color: #1f497d;
+}
+.cv-title-2 {
+  font-size: 1.4375rem;
+  line-height: 1.75rem;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0 0.9375rem;
+  background: #fff;
+  max-width: 100%;
+  font-weight: 500;
+  position: relative;
+  min-width: 3.125rem;
+  color: #1f497d;
+}
+.cv-subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0 1.5rem;
+  max-width: 100%;
+  text-align: center;
+  width: auto;
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+.cv-description {
+  padding: 0.2rem 0;
+  white-space: nowrap!important;
+}
+
+
+.contacts-icon {
+  position: absolute;
+  left: 0;
+  top: 49%;
+  transform: translateY(-50%);
+  width: 2.25rem;
+  color: #1f497d;
+  cursor: pointer;
+}
+.avatar-icon {
+  color: #1f497d;
+}

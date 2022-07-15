@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const Title = ({ size, isUppercase, isShowButton, className, onClick, children, ...attr }) => {
 
-    const classes = classNames(`ui-title-${size}`, className, {
+    const classes = classNames(`cv-title-${size}`, className, {
         isUppercase
     })
 

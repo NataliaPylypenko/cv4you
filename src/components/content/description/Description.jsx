@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 const Description = ({ isPrimary, isSecondary, className, children, ...attr }) => {
 
-    const classes = classNames('ui-text', className, {
+    const classes = classNames('cv-description', className, {
         isPrimary,
         isSecondary
     })
