@@ -13,10 +13,10 @@ const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
-  background-color: white;
-  border: 1px solid #ececec;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
   box-shadow: 0px 4px 10px rgba(0, 117, 255, 0.07), 0px 4px 20px rgba(0, 117, 255, 0.1);
-  border-radius: 1%;
+  border-radius: 12px;
 `
 const Container = styled.div`
     width: 100%;
@@ -47,6 +47,7 @@ const App = () => {
   return (
       <div className="cv-wrapper">
           <Header onClick={handlePrintClick} />
+
           <Wrapper>
               <div ref={componentRef}>
 
@@ -54,8 +55,8 @@ const App = () => {
                       <Container>
                           <Row>
                               <div className="cv-section__head">
-                                  <div className="cv-section__header">
-                                      <Description className="cv-title-3">Your name</Description>
+                                  <div className="cv-section__holder">
+                                      <Title size='1'> Your name </Title>
 
                                       <Description className="cv-subtitle">Desired role</Description>
 
@@ -127,9 +128,11 @@ const App = () => {
                   <section className="cv-section">
                       <Container>
                           <Row>
+                              <div className="cv-section__col">
                                   <Title
                                       size='2'
                                       isUppercase
+                                      isLine
                                   >
                                       Summary
                                   </Title>
@@ -137,7 +140,7 @@ const App = () => {
                                   <Description>
                                       3 meaningful sentences, an overview of your career. State your strengths and professional focus.
                                   </Description>
-
+                              </div>
                           </Row>
                       </Container>
                   </section>
@@ -145,12 +148,11 @@ const App = () => {
                   <section className="cv-section">
                       <Container>
                           <Row>
-
+                              <div className="cv-section__col">
                                   <Title
                                       size='2'
                                       isUppercase
-                                      isShowButton
-                                      onClick={() => setSkillsCounter(skillsCounter + 1)}
+                                      isLine
                                   >
                                       Professional Skills
                                   </Title>
@@ -160,6 +162,7 @@ const App = () => {
                                           <Range key={i} />
                                       ))}
                                   </Description>
+                              </div>
                           </Row>
                       </Container>
                   </section>
@@ -167,23 +170,80 @@ const App = () => {
                   <section className="cv-section">
                       <Container>
                           <Row>
-
+                              <div className="cv-section__col">
                                   <Title
                                       size='2'
                                       isUppercase
-                                      isShowButton
-                                      onClick={() => setWorksCounter(worksCounter + 1)}
+                                      isLine
                                   >
                                       Work experience
                                   </Title>
 
                                   {new Array(worksCounter).fill(1).map((_, i) => (
                                       <Description key={i}>
-                                          {i+1}. Try to list your achievements rather than just job responsibilities)
+                                          {i+1}. Try to list your achievements rather than just job responsibilities
                                       </Description>
                                   ))}
+                              </div>
+                          </Row>
+                      </Container>
+                  </section>
 
 
+                  <section className="cv-section">
+                      <Container>
+                          <Row>
+                              <div className="cv-section__col">
+                                  <Title
+                                      size='2'
+                                      isUppercase
+                                      isLine
+                                  >
+                                      Education
+                                  </Title>
+                                  <Description>
+                                      Degree and field of study
+                                  </Description>
+
+                              </div>
+                          </Row>
+                      </Container>
+                  </section>
+
+                  <section className="cv-section">
+                      <Container>
+                          <Row>
+                              <div className="cv-section__col">
+                                  <Title
+                                      size='2'
+                                      isUppercase
+                                      isLine
+                                  >
+                                      Certificates
+                                  </Title>
+                                  <Description>
+                                      List professional growth programs (courses, certificates) and awards here
+                                  </Description>
+                              </div>
+                          </Row>
+                      </Container>
+                  </section>
+
+                  <section className="cv-section">
+                      <Container>
+                          <Row>
+                              <div className="cv-section__col">
+                                  <Title
+                                      size='2'
+                                      isUppercase
+                                      isLine
+                                  >
+                                      About
+                                  </Title>
+                                  <Description>
+                                      A few words about tasks you enjoy doing the most and people you would love to work with.
+                                  </Description>
+                              </div>
                           </Row>
                       </Container>
                   </section>

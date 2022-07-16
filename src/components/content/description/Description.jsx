@@ -2,12 +2,9 @@ import React from 'react'
 import propTypes from 'prop-types'
 import classNames from 'classnames'
 
-const Description = ({ isPrimary, isSecondary, className, children, ...attr }) => {
+const Description = ({ className, children, ...attr }) => {
 
-    const classes = classNames('cv-description', className, {
-        isPrimary,
-        isSecondary
-    })
+    const classes = classNames('cv-description', className)
 
     return (
         <p
@@ -23,15 +20,11 @@ const Description = ({ isPrimary, isSecondary, className, children, ...attr }) =
 }
 
 Description.propTypes = {
-    isPrimary: propTypes.bool,
-    isSecondary: propTypes.bool,
     className: propTypes.string,
     children: propTypes.node.isRequired,
 }
 
 Description.defaultProps = {
-    isPrimary: false,
-    isSecondary: false,
     className: '',
 }
 

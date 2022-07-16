@@ -1,54 +1,30 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import classNames from 'classnames'
-import styled from 'styled-components'
 
-const Wrapper = styled.div`
-  margin-bottom: 1rem;
-  button {
-    display: inline-block;
-    transition: 0.1s all ease;
-    opacity: 0 !important;
-  }
-  &:hover button {
-    opacity: 1 !important;
-  }
-  p {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-`
-
-
-const Title = ({ size, isUppercase, isShowButton, className, onClick, children, ...attr }) => {
+const Title = ({ size, isUppercase, isLine, className, onClick, children, ...attr }) => {
 
     const classes = classNames(`cv-title-${size}`, className, {
-        isUppercase
+        isUppercase,
+        isLine
     })
 
     return (
-        <Wrapper>
-            <p
-                className={classes}
-                contentEditable
-                suppressContentEditableWarning
-                spellCheck={false}
-                {...attr}
-            >
-                {children}
-            </p>
-            {isShowButton && (
-                <button className='ui-button isLink' onClick={onClick}>+</button>
-            )}
-
-        </Wrapper>
+        <div
+            className={classes}
+            contentEditable
+            suppressContentEditableWarning
+            spellCheck={false}
+            {...attr}
+        >
+            <h2 className="h2">{children}</h2>
+        </div>
     )
 }
 
 Title.propTypes = {
     size: propTypes.oneOf(['1', '2', '3']),
     isUppercase: propTypes.bool,
-    isShowButton: propTypes.bool,
     className: propTypes.string,
     onClick: propTypes.func,
     children: propTypes.node.isRequired,
@@ -57,7 +33,6 @@ Title.propTypes = {
 Title.defaultProps = {
     size: '1',
     isUppercase: false,
-    isShowButton: false,
     onClick: () => {},
     className: '',
 }

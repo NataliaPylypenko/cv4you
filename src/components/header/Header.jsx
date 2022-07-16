@@ -7,12 +7,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 const Header = ({ onClick }) => {
     return (
         <header className='Header'>
-            <div className='ui-container'>
+            <div className='cv-container'>
                 <div className='Header_content'>
                     <span className='Header_logo'>Cv4you</span>
-                    <button className='ui-button isLink' onClick={onClick}>
+                    <button className='cv-button isLink' onClick={onClick}>
                         <FontAwesomeIcon icon={['fa', 'print']} />
-                        Print
                     </button>
                 </div>
             </div>

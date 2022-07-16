@@ -8,23 +8,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.cv-title-1,
-.cv-title-2,
-.cv-title-3,
-.cv-title-4,
-.cv-title-5,
-.cv-text {
-  padding: 0 0.4rem;
-  transition: 0.4s all ease;
-  &:focus {
-    background-color: #f3f3f3;
-  }
-}
-
-.isUppercase {
-  text-transform: uppercase;
-}
-
 @media print {
   body,
   html {

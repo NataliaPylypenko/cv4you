@@ -4,3 +4,12 @@
   margin-top: 2rem;
   text-align: center;
 }
+.cv-link {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f497d;
+  &:hover {
+    text-decoration: underline;
+  }
+}

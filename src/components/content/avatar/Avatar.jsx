@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 10rem;
   height: 10rem;
   border-radius: ${(props) => (props.isSquare ? '10px' : '50%')};
-  background-color: #ccc;
+  background-color: #1f497d;
   input {
     display: none;
   }
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
     justify-content: center;
     width: 10rem;
     height: 10rem;
-    color: #1f497d;
+    color: #f3f3f3;
     cursor: pointer;
     border-radius: ${(props) => (props.isSquare ? '10px' : '50%')};
   }
