@@ -56,7 +56,6 @@
   }
 }
 
-
 .cv-title-1,
 .cv-title-2,
 .cv-subtitle {
@@ -91,7 +90,7 @@
   flex-direction: row;
   justify-content: center;
   vertical-align: top;
-  color: #000;
+  color: #484848;
   text-align: center;
   margin-bottom: 1.25rem;
 }
@@ -99,6 +98,20 @@
 .cv-title-section {
   padding: 0.2rem 0;
   transition: 0.3s all ease;
+}
+
+.cv-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  padding-right: 1.5rem;
+}
+.cv-company {
+  font-weight: 700;
+}
+.cv-period {
+  position: relative;
 }
 
 .isLine {
@@ -124,4 +137,11 @@
   width: 2.25rem;
   color: #1f497d;
   cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+.w-100 {
+  width: 100%;
 }

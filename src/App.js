@@ -7,12 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faPhone, faLocationDot, faEnvelope, faLink, faPrint } from '@fortawesome/free-solid-svg-icons'
-import { Header, Footer, Avatar, Title, Description, Range } from "./components";
+import { Header, Footer, Avatar, Title, Description, Range, Period } from "./components";
 
 const Wrapper = styled.div`
-  max-width: 1200px;
+  max-width: 735px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   background-color: #fff;
   border: 1px solid #f3f3f3;
   box-shadow: 0px 4px 10px rgba(0, 117, 255, 0.07), 0px 4px 20px rgba(0, 117, 255, 0.1);
@@ -25,7 +25,7 @@ const Container = styled.div`
     margin-right: auto;
     margin-left: auto;
 `
-const Row = styled.section`
+const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
@@ -179,16 +179,20 @@ const App = () => {
                                       Work experience
                                   </Title>
 
-                                  {new Array(worksCounter).fill(1).map((_, i) => (
-                                      <Description key={i}>
-                                          {i+1}. Try to list your achievements rather than just job responsibilities
+                                  <div className="d-flex w-100">
+                                      <div className="cv-data">
+                                          <Description className="cv-company">Company name</Description>
+                                          <Description>Position</Description>
+                                          <Period>01/2017 - 07/2022</Period>
+                                      </div>
+                                      <Description className="w-100">
+                                          Try to list your achievements rather than just job responsibilities
                                       </Description>
-                                  ))}
+                                  </div>
                               </div>
                           </Row>
                       </Container>
                   </section>
-
 
                   <section className="cv-section">
                       <Container>
@@ -201,10 +205,15 @@ const App = () => {
                                   >
                                       Education
                                   </Title>
-                                  <Description>
-                                      Degree and field of study
-                                  </Description>
-
+                                  <div className="d-flex w-100">
+                                      <div className="cv-data">
+                                          <Description className="cv-company">School / University</Description>
+                                          <Period>01/2017 - 07/2022</Period>
+                                      </div>
+                                      <Description className="w-100">
+                                          Degree and field of study
+                                      </Description>
+                                  </div>
                               </div>
                           </Row>
                       </Container>
@@ -221,9 +230,14 @@ const App = () => {
                                   >
                                       Certificates
                                   </Title>
-                                  <Description>
-                                      List professional growth programs (courses, certificates) and awards here
-                                  </Description>
+                                  <div className="d-flex w-100">
+                                      <div className="cv-data">
+                                          <Period>2022</Period>
+                                      </div>
+                                      <Description className="w-100">
+                                          List professional growth programs (courses, certificates) and awards here
+                                      </Description>
+                                  </div>
                               </div>
                           </Row>
                       </Container>
@@ -240,9 +254,14 @@ const App = () => {
                                   >
                                       About
                                   </Title>
-                                  <Description>
-                                      A few words about tasks you enjoy doing the most and people you would love to work with.
-                                  </Description>
+                                  <div className="d-flex w-100">
+                                      <div className="cv-data">
+                                          <Description className="cv-company">Work preferences</Description>
+                                      </div>
+                                      <Description className="w-100">
+                                          A few words about tasks you enjoy doing the most and people you would love to work with.
+                                      </Description>
+                                  </div>
                               </div>
                           </Row>
                       </Container>
